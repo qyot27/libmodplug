@@ -134,7 +134,7 @@ if(HAVE_SINF)
   add_definitions(-DHAVE_SINF)
 endif(HAVE_SINF)
 
-if (NOT WIN32)
+if (NOT WIN32 OR (MINGW OR MSYS))
   set(prefix "${CMAKE_INSTALL_PREFIX}")
   set(exec_prefix "${CMAKE_INSTALL_PREFIX}")
   set(libdir "${CMAKE_INSTALL_PREFIX}/lib")
@@ -145,4 +145,4 @@ if (NOT WIN32)
   install(FILES "${PROJECT_BINARY_DIR}/libmodplug.pc"
     DESTINATION lib/pkgconfig
   )
-endif (NOT WIN32)
+endif (NOT WIN32 OR (MINGW OR MSYS))
