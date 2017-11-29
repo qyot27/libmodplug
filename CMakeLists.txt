@@ -62,6 +62,9 @@ if (BUILD_SHARED_LIBS)
   add_definitions(-DDLL_EXPORT)
 else (BUILD_SHARED_LIBS)
   add_definitions(-DMODPLUG_STATIC)
+  if(WIN32)
+    set(CFLAGS_STATIC "-DMODPLUG_STATIC")
+  endif()
 endif (BUILD_SHARED_LIBS)
 
 add_library(modplug ${LIB_TYPE}

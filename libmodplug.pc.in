@@ -10,3 +10,4 @@ Requires:
 Libs: -L${libdir} -lmodplug 
 Libs.private: -lstdc++ -lm
 Cflags: -I${includedir}
+Cflags.private: @CFLAGS_STATIC@

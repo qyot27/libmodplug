@@ -37,12 +37,14 @@ AC_CANONICAL_HOST
 case "$host" in
 	*mingw* | *cygwin*)
 		LT_LDFLAGS="-no-undefined"
+		CFLAGS_STATIC="-DMODPLUG_STATIC"
 		;;
 	*)
 		LT_LDFLAGS=""
 		;;
 esac
 AC_SUBST(LT_LDFLAGS)
+AC_SUBST(CFLAGS_STATIC)
 
 # require 10.5+ for osx/x86_64 builds
 case "$host" in
